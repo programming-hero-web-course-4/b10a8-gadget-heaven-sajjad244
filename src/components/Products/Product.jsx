@@ -13,7 +13,7 @@ const Product = ({gadget}) => {
         <p className="text-lg font-semibold ">Price: {price} $</p>
         <div className="card-actions justify-start">
           <Link
-            to="/ProductDetails"
+            to={`/allProduct/${product_id}`}
             className="btn bg-white rounded-xl text-purple-500 border-purple-500"
           >
             View Details

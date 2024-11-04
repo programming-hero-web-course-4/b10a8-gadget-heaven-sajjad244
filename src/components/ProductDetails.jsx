@@ -1,8 +1,15 @@
-import React from "react";
-import {useLoaderData} from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import {useLoaderData, useParams} from "react-router-dom";
 
 const ProductDetails = () => {
   const data = useLoaderData();
+  const {product_id} = useParams();
+  const [Product, setProduct] = useState({});
+  //
+  useEffect(() => {
+    const singleData = data.find((product) => product.product_id == product_id);
+    setProduct(singleData);
+  }, [data, product_id]);
 
   return (
     <div>
@@ -21,7 +28,9 @@ const ProductDetails = () => {
         </div>
       </div>
       {/*  */}
-      <div className="card w-2/3 mx-auto card-side bg-base-100 shadow-xl -top-20"></div>
+      <div className="card w-2/3 mx-auto card-side bg-base-100 shadow-xl -top-20">
+        <h1>{Product.product_id}</h1>
+      </div>
     </div>
   );
 };

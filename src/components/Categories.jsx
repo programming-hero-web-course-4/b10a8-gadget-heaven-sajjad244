@@ -1,12 +1,14 @@
 import React from "react";
-import {NavLink, useLoaderData} from "react-router-dom";
+import {Link, NavLink, useLoaderData} from "react-router-dom";
 
 const Categories = ({categories}) => {
   return (
     <div className="bg-white">
-      <h1 className=" font-bold text-center mb-3 text-purple-600">
-        All Product
-      </h1>
+      <Link to="/allProduct">
+        <h1 className=" font-bold text-center mb-3 bg-purple-600 text-white rounded-lg p-1">
+          All Product
+        </h1>
+      </Link>
       <div role="tablist" className="tabs tabs-bordered">
         {categories.map((category) => (
           <p key={category.id} className="border-2 p-1 rounded-lg grid">

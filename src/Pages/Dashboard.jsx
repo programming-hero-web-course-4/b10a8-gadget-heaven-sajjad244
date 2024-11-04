@@ -1,8 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import {useLoaderData} from "react-router-dom";
 
 const Dashboard = () => {
   const data = useLoaderData();
+  const [products, setProducts] = useState([]);
+  //
+  const handleSort = (sortBy) => {
+    if (sortBy == price) {
+      // sort by price
+      const sorted = [...data].sort((a, b) => b.price - a.price);
+      setProducts(sorted);
+    }
+  };
 
   return (
     <div>
@@ -32,7 +41,10 @@ const Dashboard = () => {
         <h1 className="w-36 p-2 font-bold text-2xl ">Cart</h1>
         <div className="flex gap-6 justify-center ">
           <h1 className="w-30 p-5 font-bold">Total cost: 0</h1>
-          <button className="btn-md w-32 rounded-full font-semibold text-white bg-purple-600">
+          <button
+            onClick={() => handleSort(price)}
+            className="btn-md w-32 rounded-full font-semibold text-white bg-purple-600"
+          >
             Sort by Price
           </button>
           <button className=" btn-md w-32 rounded-full font-semibold text-white  bg-purple-600">
