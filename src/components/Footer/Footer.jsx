@@ -10,7 +10,9 @@ const Footer = () => {
         <p className="text-center mt-3 text-base-400">
           Leading the way in cutting-edge technology and innovation.
         </p>
+        <hr className=" border-white border-1 mt-3" />
       </div>
+
       <footer className="footer bg-base-200  p-10 flex justify-evenly">
         <nav>
           <h6 className="footer-title text-black">Services</h6>

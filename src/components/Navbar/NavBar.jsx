@@ -1,10 +1,10 @@
 import {FaShoppingCart} from "react-icons/fa";
 import {IoMdHeart} from "react-icons/io";
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -25,22 +25,79 @@ const NavBar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow font-semibold gap-2"
+            className="menu menu-sm dropdown-content text-purple-500  bg-base-100 rounded-box z-[1] mt-3 w-52 p-5 shadow font-semibold gap-2"
           >
-            <Link to="/">Home</Link>
-            <Link to="/statistics">Statistics</Link>
-            <Link to="/dashboard">Dashboard</Link>
+            <NavLink
+              className={({isActive}) =>
+                `font-semibold ${
+                  isActive ? "text-warning" : "hover:text-warning"
+                }`
+              }
+              to="/"
+            >
+              Home
+            </NavLink>
+            <NavLink
+              className={({isActive}) =>
+                `font-semibold ${
+                  isActive ? "text-warning" : "hover:text-warning"
+                }`
+              }
+              to="/statistics"
+            >
+              Statistics
+            </NavLink>
+            <NavLink
+              className={({isActive}) =>
+                `font-semibold ${
+                  isActive ? "text-warning" : "hover:text-warning"
+                }`
+              }
+              to="/dashboard"
+            >
+              Dashboard
+            </NavLink>
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost text-xl font-bold">
+        <Link
+          to="/"
+          className="btn btn-ghost text-xl font-bold  text-purple-500"
+        >
           Gadget Heaven
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 font-semibold gap-8">
-          <Link to="/">Home</Link>
-          <Link to="/statistics">Statistics</Link>
-          <Link to="/dashboard">Dashboard</Link>
+        <ul className="menu menu-horizontal px-1 font-semibold gap-8 text-purple-500">
+          <NavLink
+            className={({isActive}) =>
+              `font-semibold ${
+                isActive ? "text-warning" : "hover:text-warning"
+              }`
+            }
+            to="/"
+          >
+            Home
+          </NavLink>
+          <NavLink
+            className={({isActive}) =>
+              `font-semibold ${
+                isActive ? "text-warning" : "hover:text-warning"
+              }`
+            }
+            to="/statistics"
+          >
+            Statistics
+          </NavLink>
+          <NavLink
+            className={({isActive}) =>
+              `font-semibold ${
+                isActive ? "text-warning" : "hover:text-warning"
+              }`
+            }
+            to="/dashboard"
+          >
+            Dashboard
+          </NavLink>
         </ul>
       </div>
       <div className="navbar-end space-x-3 rounded-full">

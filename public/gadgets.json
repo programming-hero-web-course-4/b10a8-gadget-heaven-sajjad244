@@ -3,7 +3,7 @@
     "product_id": 1,
     "product_title": "UltraPro Laptop 15",
     "product_image": "https://i.ibb.co/J3zvR3D/galaxy-book-3-ultra-ecosystem.webp",
-    "category": "laptop",
+    "category": "Laptop",
     "price": 1200,
     "description": "A high-performance laptop with a sleek design and powerful features.",
     "Specification": [
@@ -20,7 +20,7 @@
     "product_id": 2,
     "product_title": "UltraSlim Laptop 13",
     "product_image": "https://i.ibb.co/XkFSZmt/7-H1c182147b4504ced9910b9770a684a58-F-jpg-720x720q50.jpg",
-    "category": "laptop",
+    "category": "Laptop",
     "price": 999,
     "description": "A lightweight and powerful laptop, perfect for professionals on the go.",
     "Specification": [
@@ -37,7 +37,7 @@
     "product_id": 3,
     "product_title": "Gaming Laptop X99",
     "product_image": "https://i.ibb.co.com/F5x864R/alienwarem181-0ed2.jpg",
-    "category": "laptop",
+    "category": "Laptop",
     "price": 1500,
     "description": "High-end gaming laptop with an RGB keyboard and high refresh rate display.",
     "Specification": [
@@ -54,7 +54,7 @@
     "product_id": 4,
     "product_title": "Budget Laptop Z",
     "product_image": "https://i.ibb.co.com/X41SrMS/editing-laptop-2048px-233661.webp",
-    "category": "laptop",
+    "category": "Laptop",
     "price": 600,
     "description": "Affordable laptop with essential features for everyday use.",
     "Specification": [
@@ -71,7 +71,7 @@
     "product_id": 5,
     "product_title": "MaxBook 360",
     "product_image": "https://i.ibb.co.com/dk2PV7F/image-67e1ba22-3d72-44a1-b2d8-60dbb78df947-1024x.webp",
-    "category": "laptop",
+    "category": "Laptop",
     "price": 850,
     "description": "2-in-1 convertible laptop with a touch screen, perfect for multitasking.",
     "Specification": [
@@ -88,7 +88,7 @@
     "product_id": 6,
     "product_title": "MaxPhone Pro X",
     "product_image": "https://i.ibb.co/ZX3FW0n/2-Youngkit-X-Wotto-Magsafe-Case-for-i-Phone-14-Pro-Max-Brust-6033.jpg",
-    "category": "phone",
+    "category": "Phone",
     "price": 899,
     "description": "Experience the next generation of smartphone technology with MaxPhone Pro X.",
     "Specification": [
@@ -105,7 +105,7 @@
     "product_id": 7,
     "product_title": "iPhone 14 Pro",
     "product_image": "https://i.ibb.co/gz4vbqN/6i-Phone-14-Plus-review-2.webp",
-    "category": "phone",
+    "category": "Phone",
     "price": 1099,
     "description": "The iPhone 14 Pro with an advanced camera system and powerful processor.",
     "Specification": [
@@ -136,16 +136,17 @@
   },
   {
     "product_id": 9,
-    "product_title": "Wireless Earbuds Pro",
-    "product_image": "https://i.ibb.co/wLx3ZsD/51f1df715-53d8-4e6d-8d98-0a83eeea31531721120185136-CMF-By-Nothing-Buds-Pro-2-9191721120185044-20.jpg",
-    "category": "Accessories",
-    "price": 199,
-    "description": "Experience top-quality sound with these wireless earbuds that fit comfortably and securely.",
+    "product_title": "Laptop X Pro",
+    "product_image": "https://i.ibb.co.com/v32J6f7/Buy-dell-xps-9340-2024-Intel-core-ultra-7-laptop-nepal-scaled.jpg",
+    "category": "Laptop",
+    "price": 299,
+    "description": "2-in-1 convertible laptop with a touch screen, perfect for multitasking.",
     "Specification": [
-      "Noise Cancellation",
-      "Battery Life: Up to 8 hours per charge",
-      "Bluetooth 5.2",
-      "Water Resistant"
+      "14-inch HD Display",
+      "Intel i3 Processor",
+      "4GB RAM",
+      "128GB SSD",
+      "Battery Life: Up to 7 hours"
     ],
     "availability": true,
     "rating": 4.6
