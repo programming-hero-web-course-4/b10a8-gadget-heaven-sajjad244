@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {getAllProduct, removeFavorite} from "../utilites";
 import MiniCard from "./MiniCard";
+import toast from "react-hot-toast";
 
 const WishList = () => {
   // from context api
@@ -16,6 +17,7 @@ const WishList = () => {
     removeFavorite(id);
     const favorites = getAllProduct(); //came from local-storage
     setProduct(favorites);
+    toast.success("Successfully Removed!");
   };
 
   return (

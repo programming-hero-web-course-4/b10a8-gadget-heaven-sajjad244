@@ -33,7 +33,7 @@ const removeFavorite = id => {
     const favorites = getAllProduct()
     const remaining = favorites.filter(product => product.product_id != id)
     localStorage.setItem('favorites', JSON.stringify(remaining))
-    toast.success('Successfully Removed!');
+
 }
 
 

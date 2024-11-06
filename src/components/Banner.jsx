@@ -19,7 +19,7 @@ const Banner = () => {
             to="/dashboard"
             className="btn bg-white text-purple-500 font-bold rounded-3xl "
           >
-            Shop Now
+            Dashboard
           </Link>
         </div>
       </div>

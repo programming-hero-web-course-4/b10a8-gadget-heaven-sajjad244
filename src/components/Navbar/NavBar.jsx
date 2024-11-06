@@ -60,6 +60,16 @@ const NavBar = () => {
             >
               Dashboard
             </NavLink>
+            <NavLink
+              className={({isActive}) =>
+                `font-semibold ${
+                  isActive ? "text-warning" : "hover:text-warning"
+                }`
+              }
+              to="/location"
+            >
+              Locations
+            </NavLink>
           </ul>
         </div>
         <Link
@@ -100,6 +110,17 @@ const NavBar = () => {
             to="/dashboard"
           >
             Dashboard
+          </NavLink>
+
+          <NavLink
+            className={({isActive}) =>
+              `font-semibold ${
+                isActive ? "text-warning" : "hover:text-warning"
+              }`
+            }
+            to="/location"
+          >
+            Locations
           </NavLink>
         </ul>
       </div>

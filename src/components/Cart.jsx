@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {getAllProduct, removeFavorite} from "../utilites";
-
+import toast from "react-hot-toast";
 import SortCart from "./Products/SortCart";
 import {NavLink} from "react-router-dom";
 
@@ -21,7 +21,7 @@ const Cart = () => {
     removeFavorite(id);
     const favorites = getAllProduct(); //came from local-storage
     setProduct(favorites);
-
+    toast.success("Successfully Removed!");
     //   for update price
 
     const removedProduct = product.find((item) => item.product_id === id);
@@ -38,6 +38,14 @@ const Cart = () => {
       setProduct(sorted);
     }
   };
+
+  const handlePurchase = () => {
+    localStorage.removeItem("favorites");
+    setProduct([]);
+    setTotalPrice(0);
+    toast.success("Purchase successful!");
+  };
+
   return (
     <div>
       <div className="flex justify-between mt-10 p-5">
@@ -59,6 +67,7 @@ const Cart = () => {
             Sort by Price
           </NavLink>
           <NavLink
+            onClick={() => handlePurchase()}
             className={({isActive}) =>
               ` btn w-32 rounded-full font-semibold ${
                 isActive

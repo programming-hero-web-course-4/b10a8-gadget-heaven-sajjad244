@@ -45,10 +45,10 @@ const ProductDetails = () => {
       (item) => item.product_id === product.product_id
     );
     addToFavorites(product);
-    addToCart(product);
     if (isInCart) {
-      toast.error("Product already in Cart!");
+      return toast.error("Product already in Cart!");
     }
+    addToCart(product);
   };
 
   //!
@@ -90,10 +90,36 @@ const ProductDetails = () => {
             <p className="text-md font-semibold">Price: ${price} </p>
             <p className="text-md font-semibold">Rating </p>
             <div className="flex gap-5">
-              <span>
-                <ReactStars></ReactStars>
-              </span>
-              <span className="text-sm font-semibold border-2 rounded-md">
+              {/*  */}
+              <div className="rating rating-sm p-1">
+                <input
+                  type="radio"
+                  name="rating-7"
+                  className="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-7"
+                  className="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-7"
+                  className="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-7"
+                  className="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-7"
+                  className="mask mask-star-2 bg-orange-400"
+                />
+              </div>
+              {/*  */}
+              <span className="text p-1 font-semibold border-2 rounded-md">
                 {rating}
               </span>
             </div>
