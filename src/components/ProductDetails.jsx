@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {useLoaderData, useParams} from "react-router-dom";
-import ReactStars from "react-rating-stars-component";
+import {toast} from "react-hot-toast";
+
 import {FaCartShopping, FaRegHeart} from "react-icons/fa6";
 import {useCart} from "../utilites/contextApi";
 
@@ -46,7 +47,6 @@ const ProductDetails = () => {
     );
     addToFavorites(product);
     if (isInCart) {
-      return toast.error("Product already in Cart!");
     }
     addToCart(product);
   };

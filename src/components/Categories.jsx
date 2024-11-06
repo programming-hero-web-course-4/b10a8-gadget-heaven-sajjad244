@@ -3,9 +3,12 @@ import {Link, NavLink, useLoaderData} from "react-router-dom";
 
 const Categories = ({categories}) => {
   return (
-    <div className="bg-white">
+    <div className="bg-white mt-10 ">
       <Link to="/allProduct">
-        <h1 className=" font-bold text-center mb-3 bg-purple-600 text-white rounded-lg p-1">
+        <h1
+          className=" font-semibold p-3
+         text-center mb-3 text-purple-600 border-2 hover:bg-purple-600 hover:text-white rounded-lg "
+        >
           All Product
         </h1>
       </Link>

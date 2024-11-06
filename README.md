@@ -1,10 +1,8 @@
-# Project Name
+# Gadget Shop
 
-Gadget Shop
+# Overview
 
-## Overview
-
-## A modern e-commerce web application for gadgets, including mobile phones, laptops, and power banks. Built with React and React Router, the site provides users with an intuitive experience to explore and purchase the latest tech products.
+### A modern e-commerce web application for gadgets, including mobile phones, laptops, and power banks. Built with React and React Router, the site provides users with an intuitive experience to explore and purchase the latest tech products.
 
 ### Live Website
 
@@ -31,8 +29,6 @@ This project utilizes several core React concepts, including:
 ---
 
 ## Features
-
-Features
 
 Product Details Page: Each gadget has a detailed view with images, specifications, ratings, and pricing information.
 Add to Cart & Favorites: Users can add products to their cart or favorites. Duplicate entries trigger toast notifications for improved UX.

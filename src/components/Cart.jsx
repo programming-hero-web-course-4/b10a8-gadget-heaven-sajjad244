@@ -3,11 +3,14 @@ import {getAllProduct, removeFavorite} from "../utilites";
 import toast from "react-hot-toast";
 import SortCart from "./Products/SortCart";
 import {NavLink} from "react-router-dom";
+import Modal from "./Modal";
 
 const Cart = () => {
   const [product, setProduct] = useState([]);
   //   for update price
   const [totalPrice, setTotalPrice] = useState(0);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const favorites = getAllProduct(); //came from local-storage
@@ -43,7 +46,7 @@ const Cart = () => {
     localStorage.removeItem("favorites");
     setProduct([]);
     setTotalPrice(0);
-    toast.success("Purchase successful!");
+    setIsModalOpen(true);
   };
 
   return (
@@ -90,6 +93,8 @@ const Cart = () => {
           ></SortCart>
         ))}
       </div>
+      {/* Modal Component */}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };

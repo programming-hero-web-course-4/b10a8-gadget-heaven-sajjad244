@@ -1,22 +1,27 @@
-import React from "react";
+import React, {useRef, useEffect} from "react";
 
-const Modal = () => {
+const Modal = ({isOpen, onClose}) => {
+  const dialogRef = useRef(null);
+
+  useEffect(() => {
+    if (isOpen && dialogRef.current) {
+      dialogRef.current.showModal();
+    } else if (dialogRef.current) {
+      dialogRef.current.close();
+    }
+  }, [isOpen]);
   return (
     <div>
-      {/* Open the modal using document.getElementById('ID').showModal() method */}
-      <button
-        className="btn"
-        onClick={() => document.getElementById("my_modal_2").showModal()}
-      >
-        open modal
-      </button>
-      <dialog id="my_modal_2" className="modal">
+      {/* Pass ref to the dialog element */}
+      <dialog ref={dialogRef} className="modal">
         <div className="modal-box">
-          <h3 className="font-bold text-lg">Hello!</h3>
-          <p className="py-4">Press ESC key or click outside to close</p>
+          <h3 className="font-bold text-lg">Congratulations!</h3>
+          <p className="py-4">You have successfully completed your purchase</p>
         </div>
         <form method="dialog" className="modal-backdrop">
-          <button>close</button>
+          <button type="button" onClick={onClose}>
+            Close
+          </button>
         </form>
       </dialog>
     </div>
