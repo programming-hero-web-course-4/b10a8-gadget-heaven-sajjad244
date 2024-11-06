@@ -2,19 +2,23 @@ import {createBrowserRouter} from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import Home from "../Pages/Home";
 import Dashboard from "../Pages/Dashboard";
-import Statistics from "../Pages/Statistics";
 import ProductCard from "../components/Products/ProductCard";
 import ProductDetails from "../components/ProductDetails";
 import AllProduct from "../components/AllProduct";
+import Cart from "../components/Cart";
+import WishList from "../components/WishList";
+import ErrorPage from "../Pages/ErrorPage";
 
 const routes = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
         element: <Home></Home>,
+
         loader: () => fetch("../../public/category.json"),
         children: [
           {
@@ -30,13 +34,18 @@ const routes = createBrowserRouter([
         ],
       },
       {
-        path: "/statistics",
-        element: <Statistics></Statistics>,
-      },
-      {
         path: "/dashboard",
         element: <Dashboard></Dashboard>,
-        loader: () => fetch("../../public/gadgets.json"),
+        children: [
+          {
+            path: "/dashboard/cart",
+            element: <Cart></Cart>,
+          },
+          {
+            path: "/dashboard/wishlist",
+            element: <WishList></WishList>,
+          },
+        ],
       },
       {
         path: "/allProduct",

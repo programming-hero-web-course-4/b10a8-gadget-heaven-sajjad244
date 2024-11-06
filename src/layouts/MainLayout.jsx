@@ -2,10 +2,12 @@ import React from "react";
 import NavBar from "../components/Navbar/NavBar";
 import Footer from "../components/Footer/Footer";
 import {Outlet} from "react-router-dom";
+import {Toaster} from "react-hot-toast";
 
 const MainLayout = () => {
   return (
     <div className="">
+      <Toaster></Toaster>
       {/* Navbar */}
       <NavBar></NavBar>
       {/* Dynamic_Section */}
