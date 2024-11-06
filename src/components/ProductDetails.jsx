@@ -2,11 +2,12 @@ import React, {useEffect, useState} from "react";
 import {useLoaderData, useParams} from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import {FaCartShopping, FaRegHeart} from "react-icons/fa6";
-import {addFavorite, getAllProduct} from "../utilites";
+import {useCart} from "../utilites/contextApi";
 
 const ProductDetails = () => {
   const data = useLoaderData();
   const {product_id} = useParams();
+  const {addToCart, addToFavorites, favoriteItems, cartItems} = useCart();
   const [product, setProduct] = useState({});
   const [isFavorite, setIsFavorite] = useState(false);
 
@@ -15,14 +16,12 @@ const ProductDetails = () => {
   useEffect(() => {
     const singleData = data.find((product) => product.product_id == product_id);
     setProduct(singleData);
-    const favorite = getAllProduct(); //came from local_storage
-    const isExist = favorite.find(
-      (item) => item.product_id == product.product_id
+    //came from local_storage
+    const isExist = favoriteItems.find(
+      (item) => item.product_id === singleData.product_id
     );
-    if (isExist) {
-      setIsFavorite(true);
-    }
-  }, [data, product_id]);
+    setIsFavorite(isExist);
+  }, [data, product_id, favoriteItems]);
 
   const {
     product_title,
@@ -36,12 +35,20 @@ const ProductDetails = () => {
   //!   Handle Favorite btn
   //came from local_storage
   const handleFavorite = (product) => {
-    addFavorite(product); //came from local_storage
-    setIsFavorite(true);
+    if (!isFavorite) {
+      addToFavorites(product);
+      setIsFavorite(true);
+    }
   };
   const handleCart = (product) => {
-    addFavorite(product); //came from local_storage
-    setIsFavorite(true);
+    const isInCart = cartItems.some(
+      (item) => item.product_id === product.product_id
+    );
+    addToFavorites(product);
+    addToCart(product);
+    if (isInCart) {
+      toast.error("Product already in Cart!");
+    }
   };
 
   //!

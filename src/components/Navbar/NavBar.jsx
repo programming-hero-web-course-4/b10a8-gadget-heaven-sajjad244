@@ -1,8 +1,11 @@
 import {FaShoppingCart} from "react-icons/fa";
 import {IoMdHeart} from "react-icons/io";
 import {Link, NavLink} from "react-router-dom";
+import {useCart} from "../../utilites/contextApi";
 
 const NavBar = () => {
+  const {cartItems, favoriteItems} = useCart();
+
   return (
     <div className="navbar">
       <div className="navbar-start">
@@ -101,12 +104,19 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end space-x-3 rounded-full">
-        <a className="btn btn-sm bg-white p-2">
-          <FaShoppingCart />
-        </a>
-        <a className="btn btn-sm p-2 bg-white rounded-full">
-          <IoMdHeart />
-        </a>
+        <div className="relative">
+          <FaShoppingCart size={25} />
+          <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full text-xs px-1">
+            {cartItems.length}
+          </span>
+        </div>
+
+        <div className="relative">
+          <IoMdHeart size={25} />
+          <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full text-xs px-1">
+            {favoriteItems.length}
+          </span>
+        </div>
       </div>
     </div>
   );

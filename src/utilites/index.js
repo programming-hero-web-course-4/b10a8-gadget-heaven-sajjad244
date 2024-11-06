@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react"
+
 import toast from "react-hot-toast"
 
 // get all product from local storage 2nd
@@ -40,15 +40,4 @@ const removeFavorite = id => {
 
 
 export { addFavorite, getAllProduct, removeFavorite }
-
-
-
-
-
-//! custom hook context api ---
-
-export const DashboardContext = createContext();
-export const useDashboardContext = () => {
-    return useContext(DashboardContext);
-};
 

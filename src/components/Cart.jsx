@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {getAllProduct, removeFavorite} from "../utilites";
 
 import SortCart from "./Products/SortCart";
+import {NavLink} from "react-router-dom";
 
 const Cart = () => {
   const [product, setProduct] = useState([]);
@@ -45,15 +46,29 @@ const Cart = () => {
           <h1 className="w-30 p-3 text-lg font-bold">
             Total cost: ${totalPrice}{" "}
           </h1>
-          <button
+          <NavLink
             onClick={() => handleSort("price")}
-            className="btn-md w-32 rounded-full font-semibold text-white bg-purple-600"
+            className={({isActive}) =>
+              ` btn w-32 rounded-full font-semibold ${
+                isActive
+                  ? "bg-purple-500 text-white"
+                  : " border-2 text-purple-500 border-purple-600 "
+              }`
+            }
           >
             Sort by Price
-          </button>
-          <button className=" btn-md w-32 rounded-full font-semibold text-white  bg-purple-600">
+          </NavLink>
+          <NavLink
+            className={({isActive}) =>
+              ` btn w-32 rounded-full font-semibold ${
+                isActive
+                  ? "bg-purple-500 text-white"
+                  : " border-2 text-purple-500 border-purple-600 "
+              }`
+            }
+          >
             Purchase
-          </button>
+          </NavLink>
         </div>
       </div>
       {/*  */}
