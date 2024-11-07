@@ -1,10 +1,14 @@
 import React from "react";
 import bannerImg from "../assets/banner.jpg";
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
+import ReuseHeader from "./Products/ReuseHeader";
 
 const Banner = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
   return (
-    <div className="relative">
+    <div className={`relative ${isHomePage ? "-top-32" : ""}`}>
       <div className="hero bg-purple-500 min-h-screen text-white rounded-xl p-20 border-2 ">
         <div className="text-center">
           <h1 className="text-5xl font-bold text-center">
@@ -31,9 +35,9 @@ const Banner = () => {
             alt=""
           />
         </div>
-        <h1 className="text-center font-bold text-purple-800 text-3xl mt-24">
-          Explore Cutting-Edge Gadgets
-        </h1>
+        <div className="text-center font-bold text-purple-800 text-3xl mt-24">
+          <ReuseHeader title={"Explore Cutting-Edge Gadgets"}></ReuseHeader>
+        </div>
       </div>
     </div>
   );

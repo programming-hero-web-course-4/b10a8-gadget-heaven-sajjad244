@@ -6,11 +6,11 @@
 
 ### Live Website
 
-- [Visit Live Site](#)
+- [https://transcendent-jalebi-2ce943.netlify.app/](#)
 
 ### Requirement Document
 
-- ['/public/Batch-10_Assignment-08.pdf](#)
+- [https://github.com/ProgrammingHero1/B10-A8-gadget-heaven?tab=readme-ov-file#follow-requerment-pdf](#)
 
 ---
 

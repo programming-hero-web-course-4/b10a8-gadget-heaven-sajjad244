@@ -1,13 +1,15 @@
 import {FaShoppingCart} from "react-icons/fa";
 import {IoMdHeart} from "react-icons/io";
-import {Link, NavLink} from "react-router-dom";
+import {Link, NavLink, useLocation} from "react-router-dom";
 import {useCart} from "../../utilites/contextApi";
 
 const NavBar = () => {
   const {cartItems, favoriteItems} = useCart();
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   return (
-    <div className="navbar">
+    <div className={`navbar ${isHomePage ? " relative z-30 " : ""}`}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -28,7 +30,9 @@ const NavBar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content text-purple-500  bg-base-100 rounded-box z-[1] mt-3 w-52 p-5 shadow font-semibold gap-2"
+            className={`menu menu-sm dropdown-content text-purple-500  bg-base-100 rounded-box z-[1] mt-3 w-52 p-5 shadow font-semibold gap-2 ${
+              isHomePage ? "text-white" : ""
+            }`}
           >
             <NavLink
               className={({isActive}) =>
@@ -74,18 +78,24 @@ const NavBar = () => {
         </div>
         <Link
           to="/"
-          className="btn btn-ghost text-xl font-bold  text-purple-500"
+          className={`btn btn-ghost text-xl font-bold  text-purple-500 ${
+            isHomePage ? "text-white" : ""
+          }`}
         >
           Gadget Heaven
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 font-semibold gap-8 text-purple-500">
+        <ul
+          className={`menu menu-horizontal px-1 font-semibold gap-8 text-purple-500${
+            isHomePage ? "text-white" : ""
+          }`}
+        >
           <NavLink
             className={({isActive}) =>
               `font-semibold ${
                 isActive ? "text-warning" : "hover:text-warning"
-              }`
+              } `
             }
             to="/"
           >
@@ -124,16 +134,19 @@ const NavBar = () => {
           </NavLink>
         </ul>
       </div>
-      <div className="navbar-end space-x-3 rounded-full">
+      <div className="navbar-end space-x-3 rounded-full p-3">
         <div className="relative">
-          <FaShoppingCart size={25} />
+          <FaShoppingCart
+            size={26}
+            className="p-1 bg-white border-2 rounded-full"
+          />
           <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full text-xs px-1">
             {cartItems.length}
           </span>
         </div>
 
         <div className="relative">
-          <IoMdHeart size={25} />
+          <IoMdHeart size={26} className="p-1 bg-white border-2 rounded-full" />
           <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full text-xs px-1">
             {favoriteItems.length}
           </span>

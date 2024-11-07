@@ -1,4 +1,5 @@
 import {NavLink, Outlet} from "react-router-dom";
+import ReuseHeader from "../components/Products/ReuseHeader";
 
 const Dashboard = () => {
   return (
@@ -6,7 +7,9 @@ const Dashboard = () => {
       <div className="hero bg-purple-500">
         <div className="hero-content text-neutral-content text-center">
           <div className="max-w-md">
-            <h1 className="mb-5 text-3xl text-white font-bold">Dashboard</h1>
+            <div className="mb-5 text-3xl text-white font-bold">
+              <ReuseHeader title={"Dashboard"}></ReuseHeader>
+            </div>
             <p className="mb-5">
               Explore the latest gadgets that will take your experience to the
               next level. From smart devices to the coolest accessories, we have
